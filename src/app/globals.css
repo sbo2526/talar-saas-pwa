@@ -1,0 +1,1743 @@
+@import "tailwindcss";
+
+:root {
+  --font-persian: "Vazirmatn Variable", "Vazirmatn", Tahoma, Arial, sans-serif;
+  --background: #0b111a;
+  --foreground: #fff8ea;
+  --surface: #fbf2df;
+  --surface-elevated: #fff9ee;
+  --surface-glass: rgba(255, 249, 238, 0.08);
+  --muted: #7e7464;
+  --border: #d9c69f;
+  --primary: #111b27;
+  --primary-foreground: #fff8ea;
+  --accent: #17483f;
+  --accent-foreground: #f6fff9;
+  --gold: #c7a15a;
+  --gold-soft: #f0dba9;
+  --gold-pale: #fff0c7;
+  --danger: #a43f3f;
+  --ring: rgba(199, 161, 90, 0.32);
+  --shadow-luxury: 0 24px 90px rgba(7, 11, 17, 0.22);
+  --shadow-gold: 0 18px 52px rgba(199, 161, 90, 0.18);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --font-sans: var(--font-persian);
+  --font-mono: "Courier New", Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--background);
+  font-family: var(--font-persian) !important;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 18% 0%,
+      rgba(199, 161, 90, 0.2),
+      transparent 28rem
+    ),
+    radial-gradient(
+      circle at 90% 18%,
+      rgba(23, 72, 63, 0.32),
+      transparent 30rem
+    ),
+    linear-gradient(135deg, #080d14 0%, #101826 44%, #172132 100%);
+  color: var(--foreground);
+  font-family: var(--font-persian) !important;
+  font-feature-settings: "ss01";
+}
+
+body,
+button,
+input,
+select,
+textarea,
+a,
+p,
+span,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-persian) !important;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a,
+button {
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease,
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+button:not(:disabled):hover,
+a:hover {
+  transform: translateY(-1px);
+}
+
+::selection {
+  background: var(--gold-soft);
+  color: #15120b;
+}
+
+.font-persian {
+  font-family: var(--font-persian);
+}
+
+.section-luxury {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(199, 161, 90, 0.12),
+      transparent 24rem
+    ),
+    linear-gradient(135deg, #0b111a 0%, #111b27 52%, #182535 100%);
+}
+
+.card-luxury {
+  border: 1px solid rgba(217, 198, 159, 0.72);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 249, 238, 0.99),
+      rgba(247, 236, 211, 0.96)
+    ),
+    var(--surface);
+  box-shadow: var(--shadow-luxury);
+}
+
+.card-luxury-dark {
+  border: 1px solid rgba(199, 161, 90, 0.28);
+  background:
+    radial-gradient(
+      circle at 85% 0%,
+      rgba(199, 161, 90, 0.18),
+      transparent 20rem
+    ),
+    linear-gradient(145deg, rgba(25, 36, 51, 0.96), rgba(8, 13, 20, 0.98));
+  box-shadow: var(--shadow-luxury);
+}
+
+.glass-luxury {
+  border: 1px solid rgba(240, 219, 169, 0.22);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.045)
+  );
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(22px);
+}
+
+.btn-luxury-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 240, 199, 0.24);
+  background: linear-gradient(135deg, #d9b86f, #b98a3a);
+  color: #11151d;
+  font-weight: 900;
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-luxury-primary:hover {
+  background: linear-gradient(135deg, #f0dba9, #c7a15a);
+}
+
+.btn-luxury-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(199, 161, 90, 0.42);
+  background: rgba(255, 248, 234, 0.08);
+  color: #fff0c7;
+  font-weight: 900;
+  backdrop-filter: blur(14px);
+}
+
+.btn-luxury-secondary:hover {
+  background: rgba(255, 248, 234, 0.14);
+  border-color: rgba(240, 219, 169, 0.72);
+}
+
+.btn-luxury-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(199, 161, 90, 0.18);
+  background: linear-gradient(135deg, #172638, #0d1622);
+  color: var(--primary-foreground);
+  font-weight: 900;
+  box-shadow: 0 18px 44px rgba(13, 22, 34, 0.22);
+}
+
+.btn-luxury-dark:hover {
+  border-color: rgba(199, 161, 90, 0.42);
+  background: linear-gradient(135deg, #1c3045, #111d2b);
+}
+
+.input-luxury {
+  min-height: 3rem;
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgba(217, 198, 159, 0.8);
+  background: rgba(255, 249, 238, 0.92);
+  color: var(--primary);
+  padding: 0 1rem;
+  font-weight: 600;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.input-luxury::placeholder {
+  color: rgba(126, 116, 100, 0.72);
+}
+
+.input-luxury:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+.badge-luxury {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: 999px;
+  border: 1px solid rgba(199, 161, 90, 0.36);
+  background: rgba(199, 161, 90, 0.12);
+  color: var(--gold-pale);
+  padding: 0.5rem 0.875rem;
+  font-size: 0.875rem;
+  font-weight: 800;
+}
+
+.gold-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(199, 161, 90, 0.72),
+    transparent
+  );
+}
+
+.luxury-panel {
+  border: 1px solid rgba(217, 198, 159, 0.72);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 249, 238, 0.99),
+      rgba(247, 236, 211, 0.96)
+    ),
+    var(--surface);
+  box-shadow: var(--shadow-luxury);
+}
+
+.luxury-dark-panel {
+  border: 1px solid rgba(199, 161, 90, 0.28);
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(199, 161, 90, 0.18),
+      transparent 18rem
+    ),
+    linear-gradient(145deg, rgba(23, 31, 43, 0.98), rgba(11, 15, 23, 0.98));
+  box-shadow: var(--shadow-luxury);
+}
+
+.rmdp-container {
+  width: 100%;
+}
+
+.rmdp-wrapper,
+.rmdp-shadow {
+  border-radius: 1.5rem !important;
+  border: 1px solid rgba(199, 161, 90, 0.32) !important;
+  background: #fff9ee !important;
+  box-shadow: 0 24px 80px rgba(17, 24, 39, 0.16) !important;
+  font-family: var(--font-persian) !important;
+  direction: rtl;
+}
+
+.rmdp-calendar {
+  padding: 0.65rem !important;
+}
+
+.rmdp-header-values,
+.rmdp-week-day,
+.rmdp-day {
+  color: #172033 !important;
+  font-family: var(--font-persian) !important;
+  font-weight: 900 !important;
+}
+
+.rmdp-week-day {
+  color: #9f7131 !important;
+}
+
+.rmdp-day span {
+  border-radius: 0.9rem !important;
+}
+
+.rmdp-day:not(.rmdp-disabled):not(.rmdp-day-hidden) span:hover {
+  background: rgba(199, 161, 90, 0.14) !important;
+  color: #111827 !important;
+}
+
+.rmdp-day.rmdp-selected span:not(.highlight) {
+  background: linear-gradient(135deg, #d9b86f, #b98a3a) !important;
+  color: #111827 !important;
+  box-shadow: 0 10px 28px rgba(185, 138, 58, 0.25) !important;
+}
+
+.rmdp-arrow-container:hover {
+  background: rgba(199, 161, 90, 0.14) !important;
+  box-shadow: none !important;
+}
+
+.rmdp-arrow {
+  border-color: #9f7131 !important;
+}
+
+.print-contract-preview-wrap {
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.print-contract-page,
+.print-contract-page * {
+  box-sizing: border-box;
+}
+
+.print-contract-page {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: auto auto auto auto minmax(36mm, 1fr) auto auto auto;
+  gap: 0.78mm;
+  width: 210mm;
+  height: 297mm;
+  max-height: 297mm;
+  overflow: hidden;
+  border: 1.35px solid #8b6b2e;
+  background: #fffdf8;
+  color: #111827;
+  margin: 0 auto;
+  padding: 4.6mm;
+  box-shadow: 0 28px 80px rgba(17, 24, 39, 0.18);
+  font-size: 10.4pt;
+  line-height: 1.29;
+}
+
+.print-contract-page::before {
+  position: absolute;
+  inset: 2.2mm;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  border: 0.8px solid rgba(139, 107, 46, 0.48);
+  border-radius: 2.2mm;
+}
+
+.print-contract-watermark {
+  position: absolute;
+  inset: 41% auto auto 50%;
+  z-index: -1;
+  width: 46mm;
+  height: 46mm;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(139, 107, 46, 0.08);
+  border-radius: 999px;
+  color: rgba(17, 24, 39, 0.022);
+  display: grid;
+  place-items: center;
+  font-size: 23mm;
+  font-weight: 950;
+}
+
+.print-contract-header {
+  display: grid;
+  grid-template-columns: 1.06fr 1.12fr 0.92fr;
+  align-items: stretch;
+  gap: 1.75mm;
+  min-height: 0;
+  border: 1px solid #8b6b2e;
+  border-radius: 1.8mm;
+  background: #fffdf8;
+  padding: 1.35mm 1.65mm;
+}
+
+.print-brand-block {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+  gap: 2.1mm;
+}
+
+.print-logo-circle {
+  display: grid;
+  width: 20mm;
+  height: 14mm;
+  flex-shrink: 0;
+  place-items: center;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.print-monogram {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  place-items: center;
+  border: 0;
+  border-radius: 2mm;
+  background: #111827;
+  color: #f0dba9;
+  font-size: 10.7pt;
+  font-weight: 950;
+  object-fit: cover;
+}
+
+.print-hall-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  object-fit: contain;
+  padding: 0;
+}
+
+.print-hall-name {
+  color: #111111;
+  font-size: 13pt;
+  font-weight: 950;
+  line-height: 1.22;
+  max-height: 9mm;
+  overflow: hidden;
+}
+
+.print-slogan {
+  margin-top: 0.6mm;
+  color: #4a4030;
+  font-size: 8pt;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.print-title-block {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  text-align: center;
+  border-inline: 1px solid rgba(139, 107, 46, 0.32);
+  padding-inline: 2mm;
+}
+
+.print-title-block p {
+  color: #111111;
+  font-size: 10.6pt;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.print-title-block h1 {
+  margin-top: 0.55mm;
+  color: #111111;
+  font-size: 16.1pt;
+  font-weight: 950;
+  line-height: 1.16;
+}
+
+.print-title-block span {
+  margin-top: 0.9mm;
+  display: inline-flex;
+  border: 1px solid rgba(139, 107, 46, 0.38);
+  border-radius: 999px;
+  background: rgba(139, 107, 46, 0.05);
+  color: #4a4030;
+  padding: 0.45mm 2.2mm;
+  font-size: 7.2pt;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.print-meta-box {
+  display: grid;
+  align-content: stretch;
+  gap: 0.55mm;
+}
+
+.print-meta-box div {
+  display: grid;
+  grid-template-columns: 17mm 1fr;
+  align-items: center;
+  gap: 1.2mm;
+  min-height: 0;
+  border: 1px solid rgba(139, 107, 46, 0.35);
+  border-radius: 1.3mm;
+  background: #ffffff;
+  padding: 0.58mm 1.15mm;
+}
+
+.print-meta-box dt {
+  color: #4a4030;
+  font-size: 7.95pt;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.print-meta-box dd {
+  color: #111111;
+  font-size: 8.25pt;
+  font-weight: 950;
+  line-height: 1.15;
+  text-align: left;
+}
+
+.print-section {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid #b69a5b;
+  border-radius: 1.45mm;
+  background: #ffffff;
+  padding: 0.85mm 1.05mm;
+}
+
+.print-section-compact {
+  padding-bottom: 1.15mm;
+}
+
+.print-section h2 {
+  margin: 0 0 0.58mm;
+  border-bottom: 1px solid #8b6b2e;
+  color: #111111;
+  padding-bottom: 0.36mm;
+  font-size: 9.6pt;
+  font-weight: 950;
+  line-height: 1.15;
+}
+
+.print-parties-section {
+  padding-bottom: 1mm;
+}
+
+.print-party-text {
+  color: #1f1f1f;
+  font-size: 8.25pt;
+  font-weight: 760;
+  line-height: 1.2;
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
+}
+
+.print-party-text strong {
+  color: #111827;
+  font-weight: 950;
+}
+
+.print-info-grid {
+  display: grid;
+  gap: 0.7mm;
+  min-height: 0;
+  margin-top: 0.85mm;
+}
+
+.print-info-grid-5 {
+  grid-template-columns: 1.05fr 0.88fr 0.78fr 1.15fr 1.15fr 0.92fr;
+}
+
+.print-info-cell {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #b69a5b;
+  border-radius: 1.05mm;
+  background: #fcfaf5;
+  padding: 0.5mm 0.82mm;
+}
+
+.print-info-cell-wide {
+  grid-column: span 2;
+}
+
+.print-info-cell span {
+  display: block;
+  color: #4a4030;
+  font-size: 8.2pt;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.print-info-cell strong {
+  display: block;
+  margin-top: 0.35mm;
+  color: #111111;
+  font-size: 8.2pt;
+  font-weight: 900;
+  line-height: 1.2;
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  min-height: 4.2mm;
+}
+
+.print-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2mm;
+  min-height: 0;
+}
+
+.print-summary-grid > .print-section {
+  height: 100%;
+}
+
+.print-table-wrap {
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid #b69a5b;
+  border-radius: 1.1mm;
+}
+
+.print-contract-table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.print-contract-table th,
+.print-contract-table td {
+  border-bottom: 1px solid #ded2b8;
+  padding: 0.45mm 0.72mm;
+  vertical-align: middle;
+  line-height: 1.25;
+}
+
+.print-contract-table tr:last-child th,
+.print-contract-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.print-contract-table th {
+  width: 34%;
+  background: #fff8ea;
+  color: #4a4030;
+  font-size: 8.15pt;
+  font-weight: 950;
+  text-align: right;
+}
+
+.print-contract-table td {
+  color: #111111;
+  font-size: 8.2pt;
+  font-weight: 900;
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
+}
+
+.print-event-date-row th,
+.print-event-date-row td {
+  color: #b42318 !important;
+  font-size: 9.3pt;
+  font-weight: 950;
+}
+
+.print-event-date-row th {
+  background: rgba(180, 35, 24, 0.055);
+}
+
+.print-finance-table th {
+  width: 40%;
+}
+
+.print-table-strong th,
+.print-table-strong td {
+  background: #111111;
+  color: #ffffff;
+}
+
+.print-service-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 1.05mm;
+  min-height: 0;
+  height: 100%;
+}
+
+.print-list-box {
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid #b69a5b;
+  border-radius: 1.1mm;
+  background: #fff8ea;
+  padding: 0.68mm 0.95mm;
+}
+
+.print-package-box {
+  margin-bottom: 1.05mm;
+  border-color: #c7a15a;
+  background: #fff4d9;
+}
+
+.print-package-note {
+  margin-top: 0.45mm;
+  font-size: 7.45pt;
+  line-height: 1.28;
+}
+
+.print-list-box h3 {
+  color: #17483f;
+  font-size: 7.95pt;
+  font-weight: 950;
+  line-height: 1.15;
+  margin-bottom: 0.4mm;
+}
+
+.print-list-box p,
+.print-menu-groups p {
+  color: #253245;
+  font-size: 7.65pt;
+  font-weight: 760;
+  line-height: 1.28;
+}
+
+.print-menu-groups {
+  display: grid;
+  gap: 0.55mm;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.print-menu-groups strong {
+  color: #111827;
+  font-weight: 950;
+}
+
+.print-terms-section {
+  grid-template-rows: auto auto minmax(0, 1fr);
+  min-height: 0;
+  overflow: hidden;
+  padding: 0.72mm 1mm 0.85mm;
+}
+
+.print-cancellation-note {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: start;
+  gap: 0.75mm;
+  min-height: 0;
+  margin-bottom: 0.36mm;
+  border: 1px solid rgba(180, 35, 24, 0.5);
+  border-radius: 0.9mm;
+  background: rgba(180, 35, 24, 0.055);
+  color: #7a271a;
+  padding: 0.42mm 0.72mm;
+  font-size: 8pt;
+  font-weight: 900;
+  line-height: 1.22;
+}
+
+.print-cancellation-note strong {
+  color: #b42318;
+  font-weight: 950;
+  white-space: nowrap;
+}
+
+.print-cancellation-note span {
+  min-width: 0;
+}
+
+.print-terms-list {
+  min-height: 0;
+  overflow: hidden;
+  columns: 2;
+  column-gap: 2.4mm;
+  margin: 0;
+  color: #1f2937;
+  font-size: 8.25pt;
+  font-weight: 870;
+  line-height: 1.27;
+}
+
+.print-terms-list p {
+  display: grid;
+  grid-template-columns: 4.2mm 1fr;
+  gap: 0.32mm;
+  break-inside: avoid;
+  margin-bottom: 0.3mm;
+}
+
+.print-terms-list span {
+  color: #7d6841;
+  font-weight: 950;
+  text-align: left;
+}
+
+.print-acceptance {
+  display: flex;
+  align-items: center;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid rgba(23, 72, 63, 0.22);
+  border-radius: 1.45mm;
+  background: rgba(23, 72, 63, 0.055);
+  color: #111827;
+  padding: 0.68mm 1.15mm;
+  font-size: 8.05pt;
+  font-weight: 880;
+  line-height: 1.2;
+}
+
+.print-signatures {
+  display: grid;
+  grid-template-columns: 1fr 0.74fr 1fr;
+  align-items: stretch;
+  gap: 1.8mm;
+  min-height: 0;
+}
+
+.print-signature-box {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid rgba(139, 107, 46, 0.42);
+  border-radius: 1.5mm;
+  background: #ffffff;
+  padding: 1.05mm 1.25mm;
+  text-align: center;
+}
+
+.print-signature-box span,
+.print-signature-box strong {
+  display: block;
+}
+
+.print-signature-box span {
+  color: #4a4030;
+  font-size: 8.2pt;
+  font-weight: 950;
+  line-height: 1.1;
+}
+
+.print-signature-box strong {
+  margin-top: 0.55mm;
+  color: #111111;
+  font-size: 8.2pt;
+  font-weight: 900;
+  line-height: 1.12;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.print-signature-box i {
+  position: absolute;
+  right: 11%;
+  left: 11%;
+  bottom: 2.1mm;
+  display: block;
+  height: 4.6mm;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.55);
+}
+
+.print-seal-box i {
+  right: 50%;
+  left: auto;
+  bottom: 1.7mm;
+  width: 11.5mm;
+  height: 11.5mm;
+  transform: translateX(50%);
+  border: 1px dashed rgba(139, 107, 46, 0.72);
+  border-radius: 999px;
+}
+
+.print-contract-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.15mm 3.2mm;
+  min-height: 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(139, 107, 46, 0.48);
+  color: #4a4030;
+  padding-top: 0.55mm;
+  text-align: center;
+  font-size: 7.2pt;
+  font-weight: 850;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.print-contract-footer span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.print-muted {
+  color: #9b8b70 !important;
+  font-weight: 750 !important;
+}
+
+.print-contract-page :is(th, td, strong, p, span, dd, dt) {
+  overflow-wrap: anywhere;
+}
+
+.print-manual-finance-note {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(199, 161, 90, 0.38);
+  border-radius: 999px;
+  background: rgba(199, 161, 90, 0.1);
+  color: #7d6841;
+  padding: 0.25mm 1mm;
+  font-size: 6.7pt;
+  font-weight: 900;
+}
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  html,
+  body {
+    width: 210mm !important;
+    height: 297mm !important;
+    max-height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: white !important;
+    color: #111827 !important;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a,
+  button {
+    transform: none !important;
+  }
+
+  .no-print,
+  .talar-install-prompt,
+  [data-pwa-install-prompt="true"],
+  nav,
+  aside,
+  header:not(.print-contract-header),
+  footer:not(.print-contract-footer),
+  .dashboard-sidebar,
+  .dashboard-topbar,
+  .dashboard-shell-sidebar,
+  .dashboard-shell-header {
+    display: none !important;
+  }
+
+  .dashboard-shell-root,
+  .dashboard-shell-main,
+  .dashboard-shell-content,
+  .print-contract-route,
+  .print-contract-preview-wrap {
+    display: block !important;
+    width: 210mm !important;
+    min-width: 210mm !important;
+    max-width: 210mm !important;
+    height: 297mm !important;
+    min-height: 0 !important;
+    max-height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: white !important;
+  }
+
+  .print-contract-page {
+    width: 210mm !important;
+    height: 297mm !important;
+    min-height: 297mm !important;
+    max-height: 297mm !important;
+    margin: 0 !important;
+    padding: 4.8mm !important;
+    border: 1.25px solid #8b6b2e !important;
+    background: #fffdf8 !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+    break-before: avoid !important;
+    break-after: avoid !important;
+    page-break-before: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  .print-contract-page::before {
+    border-color: #8b6b2e !important;
+  }
+
+  .print-contract-header,
+  .print-section,
+  .print-info-cell,
+  .print-table-wrap,
+  .print-list-box,
+  .print-acceptance,
+  .print-signature-box {
+    background-color: #ffffff !important;
+    border-color: #b69a5b !important;
+  }
+
+  .print-title-block,
+  .print-meta-box div,
+  .print-contract-table th,
+  .print-info-cell,
+  .print-list-box {
+    background-color: #fcfaf5 !important;
+  }
+
+  .print-logo-circle {
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .print-cancellation-note {
+    border-color: rgba(180, 35, 24, 0.55) !important;
+    background-color: rgba(180, 35, 24, 0.055) !important;
+    color: #7a271a !important;
+  }
+
+  .print-table-strong th,
+  .print-table-strong td {
+    background-color: #111111 !important;
+    color: #ffffff !important;
+  }
+
+  .print-contract-table th,
+  .print-contract-table td {
+    border-color: #ded2b8 !important;
+  }
+
+  .print-contract-page > *,
+  .print-section,
+  .print-info-cell,
+  .print-list-box,
+  .print-signature-box,
+  .print-acceptance,
+  .print-cancellation-note,
+  .print-terms-section,
+  .print-contract-header,
+  .print-contract-footer {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+}
+
+@media print {
+  html:has(.owner-settlement-print-route),
+  body:has(.owner-settlement-print-route) {
+    width: 210mm !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    background: white !important;
+  }
+
+  body:has(.owner-settlement-print-route) .dashboard-shell-root,
+  body:has(.owner-settlement-print-route) .dashboard-shell-main,
+  body:has(.owner-settlement-print-route) .dashboard-shell-content,
+  body:has(.owner-settlement-print-route) .owner-settlement-print-route {
+    display: block !important;
+    width: 210mm !important;
+    min-width: 210mm !important;
+    max-width: 210mm !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: white !important;
+  }
+
+  body:has(.owner-settlement-print-route) .owner-settlement-print-page {
+    width: 210mm !important;
+    min-height: 297mm !important;
+    max-width: 210mm !important;
+    margin: 0 !important;
+    padding: 8mm !important;
+    border: 1.25px solid #8b6b2e !important;
+    background: #fffdf8 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    break-after: auto !important;
+    page-break-after: auto !important;
+  }
+
+  body:has(.owner-settlement-print-route) .owner-settlement-print-page table,
+  body:has(.owner-settlement-print-route) .owner-settlement-print-page th,
+  body:has(.owner-settlement-print-route) .owner-settlement-print-page td {
+    border-color: #ded2b8 !important;
+  }
+}
+
+/* TALAR_CONTRACT_MORE_MENU_LAYOUT_FIX_46: keep contract operations inside the card flow. */
+.contract-actions-menu[open] {
+  grid-column: 1 / -1;
+}
+
+/* TALAR_SITE_CARD_ALIGNMENT_FIX_78
+   The previous broad centering rule matched almost every rounded/bordered/shadow card
+   and unintentionally centered KPI icons and text blocks. Summary/stat cards must keep
+   their own RTL grid/flex rhythm, so alignment is start-based by default and centering is
+   available only through explicit utility classes such as .text-center. */
+.dashboard-shell-content :is(
+  .card-luxury,
+  .card-luxury-dark,
+  .luxury-panel,
+  .luxury-dark-panel,
+  [class*="rounded-"][class*="border"][class*="shadow"],
+  [class*="rounded-\["][class*="border"][class*="shadow"]
+),
+.admin-shell-content :is(
+  .card-luxury,
+  .card-luxury-dark,
+  .luxury-panel,
+  .luxury-dark-panel,
+  [class*="rounded-"][class*="border"][class*="shadow"],
+  [class*="rounded-\["][class*="border"][class*="shadow"]
+) {
+  text-align: start;
+}
+
+.dashboard-shell-content :is(
+  .card-luxury,
+  .card-luxury-dark,
+  .luxury-panel,
+  .luxury-dark-panel,
+  [class*="rounded-"][class*="border"][class*="shadow"],
+  [class*="rounded-\["][class*="border"][class*="shadow"]
+) :is(h1, h2, h3, h4, p),
+.admin-shell-content :is(
+  .card-luxury,
+  .card-luxury-dark,
+  .luxury-panel,
+  .luxury-dark-panel,
+  [class*="rounded-"][class*="border"][class*="shadow"],
+  [class*="rounded-\["][class*="border"][class*="shadow"]
+) :is(h1, h2, h3, h4, p) {
+  text-align: start;
+}
+
+.dashboard-shell-content :is(.text-center, .text-center :where(h1, h2, h3, h4, p, span)),
+.admin-shell-content :is(.text-center, .text-center :where(h1, h2, h3, h4, p, span)) {
+  text-align: center;
+}
+
+.dashboard-shell-content :is(.text-right, .text-right :where(h1, h2, h3, h4, p, span)),
+.admin-shell-content :is(.text-right, .text-right :where(h1, h2, h3, h4, p, span)) {
+  text-align: right;
+}
+
+.dashboard-shell-content :is(.text-left, .text-left :where(h1, h2, h3, h4, p, span)),
+.admin-shell-content :is(.text-left, .text-left :where(h1, h2, h3, h4, p, span)) {
+  text-align: left;
+}
+
+.dashboard-shell-content :is(input, textarea, select),
+.admin-shell-content :is(input, textarea, select) {
+  direction: inherit;
+}
+
+/* TALAR_GLOBAL_UI_SYSTEM_POLISH_62
+   Shared dashboard discipline layer: compact rhythm, reliable containment,
+   and start-aligned admin surfaces while preserving explicit text utilities. */
+.talar-admin-page {
+  --talar-admin-radius: 1.25rem;
+  --talar-admin-radius-lg: 1.45rem;
+  --talar-admin-gap: 1rem;
+  --talar-admin-card-pad: 1rem;
+  --talar-admin-control-h: 2.65rem;
+  width: 100%;
+  color: #111827;
+  overflow-x: clip;
+}
+
+.talar-admin-page > section > :not([hidden]) ~ :not([hidden]) {
+  margin-top: var(--talar-admin-gap) !important;
+}
+
+.talar-admin-page :where(.card-luxury, .card-luxury-dark, .luxury-panel, .luxury-dark-panel),
+.talar-admin-page :where(article, section, form, nav, div, a)[class*="rounded-"][class*="border"][class*="shadow"]:not([class*="rounded-full"]):not(.print-contract-page):not(.owner-settlement-print-page) {
+  border-radius: var(--talar-admin-radius-lg);
+  box-shadow: 0 14px 44px rgba(17, 24, 39, 0.07);
+  text-align: start;
+}
+
+.talar-admin-page :where(article, section, form, nav, div, a)[class*="rounded-"][class*="border"][class*="shadow"]:not([class*="rounded-full"]) :where(h1, h2, h3, h4, p) {
+  text-align: start;
+}
+
+.talar-admin-page :where(.text-center, .text-center :where(h1, h2, h3, h4, p, span)) {
+  text-align: center;
+}
+
+.talar-admin-page :where(.text-right, .text-right :where(h1, h2, h3, h4, p, span)) {
+  text-align: right;
+}
+
+.talar-admin-page :where(.text-left, .text-left :where(h1, h2, h3, h4, p, span)) {
+  text-align: left;
+}
+
+.talar-admin-page :where([class*="grid-cols-"][class*="gap-3"], [class*="grid-cols-"][class*="gap-4"]) {
+  align-items: stretch;
+}
+
+.talar-admin-page :where(article, section, form, div, a)[class*="rounded-"][class*="border"][class*="shadow"]:not([class*="rounded-full"]) > :where([class*="grid"], [class*="flex"]) {
+  min-width: 0;
+}
+
+.talar-admin-page :where(.input-luxury, input, select, textarea):not([type="checkbox"]):not([type="radio"]):not([type="hidden"]) {
+  min-height: var(--talar-admin-control-h);
+  border-radius: 0.95rem;
+}
+
+.talar-admin-page :where(.btn-luxury-primary, .btn-luxury-secondary, .btn-luxury-dark),
+.talar-admin-page :where(a, button)[class*="min-h-12"],
+.talar-admin-page :where(a, button)[class*="min-h-11"] {
+  min-height: var(--talar-admin-control-h);
+  border-radius: 0.95rem;
+}
+
+.talar-admin-page :where([class*="rounded-full"][class*="border"]) {
+  min-height: 1.75rem;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.talar-admin-page :where([class*="rounded-"][class*="border"] p, [class*="rounded-"][class*="border"] h1, [class*="rounded-"][class*="border"] h2, [class*="rounded-"][class*="border"] h3) {
+  overflow-wrap: anywhere;
+}
+
+.talar-admin-page :where([class*="overflow-x-auto"]) {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(199, 161, 90, 0.55) transparent;
+}
+
+.talar-admin-page :where(summary) {
+  min-width: 0;
+}
+
+.talar-admin-page details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.dashboard-shell-header {
+  box-shadow: 0 10px 34px rgba(17, 24, 39, 0.08);
+}
+
+.dashboard-shell-main {
+  min-width: 0;
+}
+
+.dashboard-nav :where(a, summary) {
+  line-height: 1.45;
+}
+
+@media (min-width: 640px) {
+  .talar-admin-page {
+    --talar-admin-gap: 1.125rem;
+    --talar-admin-card-pad: 1.125rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .talar-admin-page {
+    --talar-admin-gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .talar-admin-page {
+    --talar-admin-radius: 1.05rem;
+    --talar-admin-radius-lg: 1.18rem;
+    --talar-admin-gap: 0.9rem;
+    overflow-x: hidden;
+  }
+
+  .talar-admin-page :where(h1) {
+    line-height: 1.35;
+  }
+
+  .talar-admin-page :where(.btn-luxury-primary, .btn-luxury-secondary, .btn-luxury-dark),
+  .talar-admin-page :where(a, button)[class*="min-h-12"],
+  .talar-admin-page :where(a, button)[class*="min-h-11"] {
+    width: 100%;
+    min-height: 2.55rem;
+  }
+
+  .talar-admin-page :where([class*="grid-cols-2"]) {
+    min-width: 0;
+  }
+
+  .talar-admin-page :where([class*="min-w-["]) {
+    min-width: 0;
+  }
+
+  .talar-admin-page :where(a:hover, button:not(:disabled):hover) {
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .talar-home-page {
+    overflow-x: hidden;
+  }
+
+  .talar-home-page section .btn-luxury-primary,
+  .talar-home-page section .btn-luxury-secondary {
+    width: 100%;
+    min-height: 2.75rem;
+    border-radius: 0.95rem;
+  }
+
+  .talar-home-page a:hover,
+  .talar-home-page button:not(:disabled):hover {
+    transform: none;
+  }
+
+  .talar-home-page section {
+    scroll-margin-top: 4.5rem;
+  }
+}
+
+/* TALAR_DEMO_MOBILE_UI_POLISH_60
+   Scoped mobile-only polish for /demo. Desktop remains controlled by existing Tailwind classes. */
+@media (max-width: 640px) {
+  .talar-demo-page {
+    overflow-x: hidden;
+  }
+
+  .talar-demo-page .demo-top-nav-section {
+    padding-top: 0.75rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .talar-demo-page .demo-top-nav {
+    gap: 0.65rem;
+    border-radius: 1.05rem;
+    padding: 0.65rem;
+  }
+
+  .talar-demo-page .demo-top-nav > a:first-child {
+    min-width: 0;
+    gap: 0.55rem;
+  }
+
+  .talar-demo-page .demo-top-nav > a:first-child span:last-child {
+    min-width: 0;
+  }
+
+  .talar-demo-page .demo-top-nav > div:last-child {
+    flex-shrink: 0;
+  }
+
+  .talar-demo-page .demo-top-nav .btn-luxury-primary {
+    min-height: 2.35rem;
+    border-radius: 0.85rem;
+    padding-inline: 0.75rem;
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+
+  .talar-demo-page .demo-hero-section {
+    padding-bottom: 2.75rem;
+  }
+
+  .talar-demo-page .demo-hero-grid {
+    gap: 1.75rem;
+  }
+
+  .talar-demo-page h1 {
+    margin-top: 1.15rem;
+    font-size: 2rem;
+    line-height: 1.35;
+  }
+
+  .talar-demo-page h2 {
+    font-size: 1.55rem;
+    line-height: 1.45;
+  }
+
+  .talar-demo-page h3,
+  .talar-demo-page h4 {
+    font-size: 1.12rem;
+    line-height: 1.55;
+  }
+
+  .talar-demo-page p {
+    line-height: 1.9;
+  }
+
+  .talar-demo-page .demo-hero-section p,
+  .talar-demo-page .demo-section-heading p,
+  .talar-demo-page .demo-rules-intro p,
+  .talar-demo-page .demo-activation-copy p,
+  .talar-demo-page .demo-final-card p {
+    font-size: 0.9rem;
+  }
+
+  .talar-demo-page .demo-hero-bullets,
+  .talar-demo-page .demo-status-grid,
+  .talar-demo-page .demo-trust-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .talar-demo-page .demo-hero-bullets > div,
+  .talar-demo-page .demo-trust-grid > div {
+    display: flex;
+    min-height: 3rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.95rem;
+    padding: 0.65rem 0.55rem;
+    text-align: center;
+    font-size: 0.72rem;
+    line-height: 1.7;
+  }
+
+  .talar-demo-page .demo-hero-bullets svg,
+  .talar-demo-page .demo-trust-grid svg {
+    margin-left: 0.25rem;
+    flex-shrink: 0;
+  }
+
+  .talar-demo-page .demo-hero-note,
+  .talar-demo-page .demo-note-card,
+  .talar-demo-page .demo-status-notice {
+    border-radius: 1.05rem;
+    padding: 0.85rem;
+    font-size: 0.82rem;
+    line-height: 1.85;
+  }
+
+  .talar-demo-page .demo-cta-row,
+  .talar-demo-page .demo-cta-row form {
+    width: 100%;
+  }
+
+  .talar-demo-page .demo-cta-row .btn-luxury-primary,
+  .talar-demo-page .demo-cta-row .btn-luxury-secondary,
+  .talar-demo-page form .btn-luxury-primary {
+    width: 100%;
+    min-height: 2.8rem;
+    justify-content: center;
+    border-radius: 0.95rem;
+    padding-block: 0.75rem;
+    font-size: 0.86rem;
+  }
+
+  .talar-demo-page a:hover,
+  .talar-demo-page button:not(:disabled):hover,
+  .talar-demo-page .demo-feature-card:hover {
+    transform: none;
+  }
+
+  .talar-demo-page .demo-status-mockup {
+    max-width: 100%;
+  }
+
+  .talar-demo-page .demo-status-mockup > div:last-child,
+  .talar-demo-page .demo-activation-status,
+  .talar-demo-page .demo-activation-copy,
+  .talar-demo-page .demo-rules-intro,
+  .talar-demo-page .demo-final-card {
+    border-radius: 1.15rem;
+    padding: 0.95rem;
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.24);
+  }
+
+  .talar-demo-page .demo-status-grid > div {
+    border-radius: 0.95rem;
+    padding: 0.75rem 0.55rem;
+    text-align: center;
+  }
+
+  .talar-demo-page .demo-status-grid p:first-child {
+    font-size: 0.68rem;
+  }
+
+  .talar-demo-page .demo-status-grid p:last-child {
+    font-size: 0.82rem;
+  }
+
+  .talar-demo-page .demo-section,
+  .talar-demo-page .demo-activation-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .talar-demo-page .demo-final-section {
+    padding-top: 1.25rem;
+    padding-bottom: 2.75rem;
+  }
+
+  .talar-demo-page .demo-section-heading {
+    max-width: 100%;
+  }
+
+  .talar-demo-page .demo-section-heading > div,
+  .talar-demo-page .demo-activation-section .demo-section-heading > div,
+  .talar-demo-page .demo-final-card .inline-flex,
+  .talar-demo-page .demo-rules-intro .inline-flex,
+  .talar-demo-page .demo-activation-copy .inline-flex {
+    border-radius: 999px;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.74rem;
+  }
+
+  .talar-demo-page .demo-process-grid,
+  .talar-demo-page .demo-features-grid,
+  .talar-demo-page .demo-rules-grid {
+    margin-top: 1.35rem;
+    gap: 0.75rem;
+  }
+
+  .talar-demo-page .demo-step-card,
+  .talar-demo-page .demo-rule-card,
+  .talar-demo-page .demo-feature-card {
+    border-radius: 1.05rem;
+    padding: 0.95rem;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.22);
+  }
+
+  .talar-demo-page .demo-step-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 0.75rem;
+    align-items: start;
+  }
+
+  .talar-demo-page .demo-step-card > p:first-of-type,
+  .talar-demo-page .demo-rule-card > p:first-of-type {
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.2;
+  }
+
+  .talar-demo-page .demo-step-card h3 {
+    margin-top: 0;
+  }
+
+  .talar-demo-page .demo-step-card > p:last-child {
+    grid-column: 2;
+    margin-top: 0.25rem;
+    font-size: 0.82rem;
+    line-height: 1.85;
+  }
+
+  .talar-demo-page .demo-feature-card > div:not(.absolute) {
+    float: right;
+    margin-left: 0.7rem;
+    width: 2.45rem;
+    height: 2.45rem;
+    border-radius: 0.8rem;
+  }
+
+  .talar-demo-page .demo-feature-card h3 {
+    margin-top: 0.1rem;
+    font-size: 1rem;
+  }
+
+  .talar-demo-page .demo-feature-card p {
+    clear: both;
+    margin-top: 0.75rem;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 0.82rem;
+    line-height: 1.85;
+  }
+
+  .talar-demo-page .demo-rules-layout {
+    gap: 0.85rem;
+  }
+
+  .talar-demo-page .demo-rules-intro h2 {
+    margin-top: 1rem;
+  }
+
+  .talar-demo-page .demo-rules-intro > div:first-child {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 0.95rem;
+  }
+
+  .talar-demo-page .demo-rule-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.65rem;
+    align-items: start;
+  }
+
+  .talar-demo-page .demo-rule-card > p:last-child {
+    margin-top: 0;
+    font-size: 0.82rem;
+    line-height: 1.85;
+  }
+
+  .talar-demo-page .demo-activation-panel {
+    margin-top: 1.45rem;
+    border-radius: 1.2rem;
+    padding: 0.85rem;
+    box-shadow: 0 20px 65px rgba(0, 0, 0, 0.26);
+  }
+
+  .talar-demo-page .demo-activation-panel > div {
+    gap: 0.85rem;
+  }
+
+  .talar-demo-page .demo-activation-copy h3 {
+    margin-top: 1rem;
+    font-size: 1.45rem;
+  }
+
+  .talar-demo-page .demo-activation-copy .gold-divider,
+  .talar-demo-page .demo-activation-status .gold-divider {
+    margin-block: 1rem;
+  }
+
+  .talar-demo-page .demo-activation-status > div > div:first-child {
+    display: block;
+  }
+
+  .talar-demo-page .demo-activation-status > div > div:first-child span {
+    margin-top: 0.75rem;
+    display: inline-flex;
+  }
+
+  .talar-demo-page .demo-note-card > div {
+    gap: 0.75rem;
+  }
+
+  .talar-demo-page .demo-note-card h3 {
+    font-size: 1rem;
+  }
+
+  .talar-demo-page .demo-note-card p {
+    font-size: 0.82rem;
+  }
+
+  .talar-demo-page .demo-final-card .grid {
+    gap: 1.15rem;
+  }
+}
+
+/* TALAR_ADMIN_STAT_CARD_CONTRACT_STYLE_FIX_79
+   Force admin KPI/stat boxes to use the same rhythm as contract KPI cards:
+   RTL text/value stack on the right, compact icon rail on the left, no inherited
+   centering from legacy broad card rules. */
+.admin-shell-content .admin-stat-card,
+.dashboard-shell-content .admin-stat-card {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 2.35rem !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  min-height: 6.25rem !important;
+  padding: 0.75rem !important;
+  border-radius: 1.15rem !important;
+  text-align: right !important;
+}
+
+.admin-shell-content .admin-stat-card :where(h1, h2, h3, h4, p, span),
+.dashboard-shell-content .admin-stat-card :where(h1, h2, h3, h4, p, span) {
+  text-align: right !important;
+}
+
+.admin-shell-content .admin-stat-card__body,
+.dashboard-shell-content .admin-stat-card__body {
+  min-width: 0 !important;
+  margin-inline: 0 !important;
+  text-align: right !important;
+}
+
+.admin-shell-content .admin-stat-card__icon,
+.dashboard-shell-content .admin-stat-card__icon,
+.admin-shell-content .admin-stat-card__icon :where(svg),
+.dashboard-shell-content .admin-stat-card__icon :where(svg) {
+  margin-inline: 0 !important;
+}
+
+.admin-shell-content .admin-stat-card__icon,
+.dashboard-shell-content .admin-stat-card__icon {
+  justify-self: center !important;
+}

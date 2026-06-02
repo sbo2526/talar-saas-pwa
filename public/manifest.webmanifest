@@ -1,0 +1,22 @@
+{
+  "name": "Talar SaaS PWA",
+  "short_name": "Talar",
+  "description": "پلتفرم چند مستاجری مدیریت تالار پذیرایی",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f8fafc",
+  "theme_color": "#0f766e",
+  "categories": ["business", "productivity"],
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

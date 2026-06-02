@@ -1,0 +1,38 @@
+-- Add Rubika messenger integration settings.
+-- This table mirrors TelegramIntegrationSetting and BaleIntegrationSetting so Rubika can behave as a first-class notification channel.
+CREATE TABLE "RubikaIntegrationSetting" (
+    "id" TEXT NOT NULL,
+    "tenantId" TEXT NOT NULL,
+    "isEnabled" BOOLEAN NOT NULL DEFAULT false,
+    "botTokenEncrypted" TEXT,
+    "botTokenMasked" TEXT,
+    "chatId" TEXT,
+    "chatTitle" TEXT,
+    "sendContractEvents" BOOLEAN NOT NULL DEFAULT true,
+    "sendPaymentEvents" BOOLEAN NOT NULL DEFAULT true,
+    "sendExpenseEvents" BOOLEAN NOT NULL DEFAULT true,
+    "sendCustomerEvents" BOOLEAN NOT NULL DEFAULT false,
+    "sendSecurityEvents" BOOLEAN NOT NULL DEFAULT false,
+    "sendDailyReports" BOOLEAN NOT NULL DEFAULT false,
+    "sendWeeklyReports" BOOLEAN NOT NULL DEFAULT false,
+    "sendMonthlyReports" BOOLEAN NOT NULL DEFAULT false,
+    "sendEventReminders" BOOLEAN NOT NULL DEFAULT false,
+    "sendOutstandingBalanceReminders" BOOLEAN NOT NULL DEFAULT false,
+    "dailyReportTime" TEXT,
+    "weeklyReportDay" TEXT,
+    "monthlyReportDay" INTEGER,
+    "lastTestAt" TIMESTAMP(3),
+    "lastSuccessAt" TIMESTAMP(3),
+    "lastErrorAt" TIMESTAMP(3),
+    "lastErrorMessage" TEXT,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "RubikaIntegrationSetting_pkey" PRIMARY KEY ("id")
+);
+
+CREATE UNIQUE INDEX "RubikaIntegrationSetting_tenantId_key" ON "RubikaIntegrationSetting"("tenantId");
+CREATE INDEX "RubikaIntegrationSetting_tenantId_idx" ON "RubikaIntegrationSetting"("tenantId");
+CREATE INDEX "RubikaIntegrationSetting_isEnabled_idx" ON "RubikaIntegrationSetting"("isEnabled");
+
+ALTER TABLE "RubikaIntegrationSetting" ADD CONSTRAINT "RubikaIntegrationSetting_tenantId_fkey" FOREIGN KEY ("tenantId") REFERENCES "Tenant"("id") ON DELETE CASCADE ON UPDATE CASCADE;
